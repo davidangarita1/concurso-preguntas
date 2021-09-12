@@ -16,4 +16,8 @@ export class MenuComponent implements OnInit {
 	ngOnInit() {
 		this.usuario = this.dataService.getData();
 	}
+
+	actualizarResultados() {
+		this.usuario = this.dataService.getData();
+	}
 }
