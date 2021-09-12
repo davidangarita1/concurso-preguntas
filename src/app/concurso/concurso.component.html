@@ -1,6 +1,8 @@
 <nav class="navbar navbar-light bg-light ">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Concurso de Preguntas Sofka</a>
+		<div class="col-12 text-center">
+			<h1>Concurso de Preguntas Sofka</h1>
+		</div>
 	</div>
 </nav>
 <div class="container">
@@ -14,6 +16,11 @@
 	</div>
 	<div class="row mt-3 text-center" *ngIf="pregunta.length && juego == false">
 		<h3>{{pregunta}}</h3>
+	</div>
+	<div class="row" *ngIf="juego">
+		<div class="col text-center inicio">
+			<img src="../../assets/images/inicio.jpg" class="img-fluid" alt="">
+		</div>
 	</div>
 	<div class="row" *ngIf="imagen.length && juego == false">
 		<div class="col text-center">
