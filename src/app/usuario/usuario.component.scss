@@ -1,0 +1,29 @@
+.bg {
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../../assets/images/background.jpg");
+	background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+	height: 500px;
+	width: 500px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+}
+
+form {
+	justify-self: center;
+  	align-self: center;
+	grid-row: 1;
+	grid-column: 1;
+	label {
+		color: white;
+		font-size: 30px;
+	}
+	input {
+		font-size: 25px;
+	}
+}

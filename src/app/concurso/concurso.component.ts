@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { PREGUNTAS } from './preguntas';
 import { DataService } from '../services/data.service';
 import { usuario } from '../models/usuario';
+import { pregunta } from '../models/pregunta';
 
 @Component({
 	selector: 'app-concurso',
@@ -11,13 +12,22 @@ import { usuario } from '../models/usuario';
 })
 export class ConcursoComponent implements OnInit {
 	usuario: usuario = null;
-	pregunta: string = "";
+	pregObj: pregunta = {
+		id: 0,
+		pregunta: "",
+		respuesta: "",
+		opciones: [],
+		categoria: "",
+		nivel: "",
+		imagen: ""
+	};
+	terminado: boolean = false;
 	imagen: string = "";
 	categoria: string = "";
 	opciones:string[] = [];
 	juego:boolean = true;
+	gemas: number = 0;
 	corr: string = "";
-	nivel: string = "";
 	dificultad: string[] = ["Facil", "Normal", "Dificil", "Dios", "Titán"];
 	preguntas: any;
 	cont: number = 0;
@@ -35,12 +45,8 @@ export class ConcursoComponent implements OnInit {
 	}
 
 	preguntaRandom(item) {
-		this.corr = item.opciones.indexOf(item.respuesta);
-		this.pregunta = item.pregunta;
-		this.imagen = item.imagen;
-		this.opciones = item.opciones;
-		this.categoria = item.categoria;
-		this.nivel = item.nivel;
+		this.pregObj = item;
+		this.corr = item.opciones.indexOf(this.pregObj.respuesta);
 	}
 
 	filtradas: any[] = []
@@ -53,15 +59,22 @@ export class ConcursoComponent implements OnInit {
 
 	clean(){
 		this.imagen = "";
-		this.pregunta = "";
+		this.pregObj = null;
 		this.opciones = [];
 		this.categoria = "";
+	}
+
+	reiniciar(){
+		this.terminado = false;
+		this.cont = 0;
+		this.gemas = 0;
 	}
 
 	siguiente(index){
 		this.cont++;
 		this.clean();
 		if(this.corr === index){
+			this.gemas++;
 			this.dataService.addValue("correctas");
 			this.dataService.addValue("puntos");
 		} else {
@@ -70,6 +83,7 @@ export class ConcursoComponent implements OnInit {
 		if(this.cont == 5) {
 			this.cont = 0;
 			this.juego = true;
+			this.terminado = true;
 		}
 		let preg = Math.trunc(Math.random() * 5);
 		this.filtro(this.dificultad[this.cont]);

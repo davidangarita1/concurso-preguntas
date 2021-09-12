@@ -1,42 +1,48 @@
-<div class="container">
-	<div class="row" *ngIf="juego">
-		<div class="col-6" *ngIf="correctas > 0">
-			<h4><span class="badge bg-success">Correctas: {{correctas}}</span></h4>
+<app-menu></app-menu>
+<div class="container" *ngIf="terminado == false">
+	<h1 class="text-center" *ngIf="juego">Concurso de Preguntas Sofka</h1>
+	<div class="row" *ngIf="pregObj.categoria.length && juego == false">
+		<div class="col-6 p-2">
+			<h3><span class="badge bg-dark">Categoria: {{pregObj.categoria}}</span></h3>
 		</div>
-		<div class="col-6" *ngIf="erroneas > 0">
-			<h4><span class="badge bg-danger">Erroneas: {{erroneas}}</span></h4>
-		</div>
-	</div>
-	<div class="row" *ngIf="categoria.length && juego == false">
-		<div class="col-6">
-			<h3><span class="badge bg-dark">Categoria: {{categoria}}</span></h3>
-		</div>
-		<div class="col-6">
-			<h3><span class="badge bg-dark">Nivel: {{nivel}}</span></h3>
+		<div class="col-6 p-2">
+			<h3><span class="badge bg-dark">Nivel: {{pregObj.nivel}}</span></h3>
 		</div>
 	</div>
-	<div class="row mt-3 text-center" *ngIf="pregunta.length && juego == false">
-		<h3>{{pregunta}}</h3>
+	<div class="row mt-3 text-center" *ngIf="pregObj.pregunta && juego == false">
+		<h3>{{pregObj.pregunta}}</h3>
 	</div>
 	<div class="row" *ngIf="juego">
 		<div class="col text-center inicio">
 			<img src="../../assets/images/inicio.jpg" class="img-fluid" alt="">
 		</div>
 	</div>
-	<div class="row" *ngIf="imagen.length && juego == false">
+	<div class="row" *ngIf="pregObj.imagen.length && juego == false">
 		<div class="col text-center">
-			<img src="../../assets/images/{{imagen}}" class="img-fluid" alt="">
+			<img src="../../assets/images/{{pregObj.imagen}}" class="img-fluid" alt="">
 		</div>
 	</div>
-	<div class="row text-center mt-5" *ngIf="opciones.length && juego == false">
-		<div *ngFor="let opcion of opciones; index as i" class="col-6">
+	<div class="row text-center mt-3" *ngIf="pregObj.opciones.length && juego == false">
+		<div *ngFor="let opcion of pregObj.opciones; index as i" class="col-6">
 			<button type="button" class="btn btn-outline-primary" (click)="siguiente(i)">{{opcion}}</button>
 		</div>
 	</div>
-	<button type="button" class="btn btn-info" *ngIf="juego" (click)="empezarJuego()">Empezar</button>
-</div>
-<div class="row mt-3">
-	<div class="col-12 text-center">
-		<h6>By David Angarita</h6>
+	<div class="row text-center">
+		<div class="col-12">
+			<button id="empezar" type="button" class="btn btn-info" *ngIf="juego" (click)="empezarJuego()">Empezar</button>
+		</div>
+
 	</div>
 </div>
+<div class="container">
+	<div class="row text-left" *ngIf="terminado">
+		<div class="col text-center points">
+			<h1 class="mb-3">Felicitaciones</h1>
+			<h3>Has terminado el concurso</h3>
+			<h3>El total ganado es:</h3>
+			<h3><img src="../../assets/images/diamond.png" class="img-fluid" alt=""> +{{gemas}}</h3>
+			<button type="button" class="btn btn-info" (click)="reiniciar()">Reiniciar</button>
+		</div>
+	</div>
+</div>
+<app-footer></app-footer>

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { usuario } from '../models/usuario';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,34 +10,33 @@ export class DataService {
 		private router: Router,
 	) { }
 
-	private data: usuario = {
-		nombre: 'Antonio',
-		correctas: 0,
-		erroneas: 0,
-		puntos: 0
-	};
+	private data;
 
 	setData(data) {
-		this.data = data;
+		localStorage.setItem('concursante',JSON.stringify(data));
 	}
 
 	addValue(param) {
+		this.data = JSON.parse(localStorage.getItem('concursante'));
 		switch (param) {
 			case 'correctas':
 				this.data.correctas++;
+				this.setData(this.data);
 				break;
 			case 'erroneas':
 				this.data.erroneas++;
+				this.setData(this.data);
 				break;
 			case 'puntos':
 				this.data.puntos++;
+				this.setData(this.data);
 				break;
 		}
 	}
 
 	getData() {
-		let temp = this.data;
-		//this.clearData();
+		let temp = JSON.parse(localStorage.getItem('concursante'));
+		this.clearData();
 		return temp;
 	}
 

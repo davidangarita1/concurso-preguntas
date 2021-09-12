@@ -1,6 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark mb-2">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Sofka</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 			aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -10,12 +9,12 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false">
-						Usuario: {{usuario.nombre}}
+						{{usuario.nombre}}
 					</a>
 					<ul class="dropdown-menu points" aria-labelledby="navbarDropdownMenuLink">
 						<li><img src="../../assets/images/diamond.png" class="img-fluid" alt="">{{usuario.puntos}}</li>
 						<li><span class="badge bg-success">Correctas: {{usuario.correctas}}</span></li>
-						<li><span class="badge bg-danger">Erroneas:{{usuario.erroneas}}</span></li>
+						<li><span class="badge bg-danger">Erroneas: {{usuario.erroneas}}</span></li>
 					</ul>
 				</li>
 			</ul>
