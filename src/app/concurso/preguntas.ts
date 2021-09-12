@@ -41,7 +41,7 @@ export const PREGUNTAS = [
       "respuesta": "Al rey Haile Selassie I",
       "opciones": ["El rey Carlomagno", "Al rey Haile Selassie I", "Al rey Haile Selassie II", "Al rey Haile Selassie III"],
       "categoria": "Historia",
-      "Nivel": "Titán",
+      "nivel": "Titán",
       "imagen": "5.jpg",
     },
     {
@@ -50,6 +50,7 @@ export const PREGUNTAS = [
       "respuesta": "Guanina, adenina, timina y citosina",
       "opciones": ["Guanina, adenina, timina y citosina", "Guanabana, adeno, timida y xitocina", "Guainia, adeciva, tiamina, citrocina", "Acido, Ribuno, cleico, Adenoso"],
       "categoria": "Naturaleza y ciencias",
+	  "nivel": "Facil",
       "imagen": "6.jpg",
     },
     {
@@ -58,6 +59,7 @@ export const PREGUNTAS = [
       "respuesta": "Significa 'antes del meridiano'",
       "opciones": ["Significa 'antes del medio dia'", "Significa 'antes de la mañana'", "Significa 'antes del meridiano'", "Significa 'ante maritiva'"],
       "categoria": "Naturaleza y ciencias",
+	  "nivel": "Normal",
       "imagen": "7.jpg",
     },
     {
@@ -66,6 +68,7 @@ export const PREGUNTAS = [
       "respuesta": "La neurona",
       "opciones": ["La neurona", "La bacteria", "La parasita", "La célula del virosa"],
       "categoria": "Naturaleza y ciencias",
+	  "nivel": "Dificil",
       "imagen": "8.jpg",
     },
     {
@@ -74,6 +77,7 @@ export const PREGUNTAS = [
       "respuesta": "En la teoría de la relatividad de Albert Einstein. ",
       "opciones": ["En la teoría de la relatividad de Newton.", "En la teoría de la relatividad de Albert Einstein.",  "En la teoría de la relatividad de Socrates", "En la teoría de la relatividad de Jimmy Neutrón."],
       "categoria": "Naturaleza y ciencias",
+	  "nivel": "Dios",
       "imagen": "9.jpg",
     },
     {
@@ -82,6 +86,142 @@ export const PREGUNTAS = [
       "respuesta": "Mediante un empaste",
       "opciones": ["Mediante un empaste", "Sacando el diente", "Con crema de dientes", "Pidiendole a DIos"],
       "categoria": "Naturaleza y ciencias",
+	  "nivel": "Titán",
       "imagen": "10.jpg",
     },
+	{
+		"id": 11,
+		"pregunta": "¿Cómo se llamaba el cantante de Queen?",
+		"respuesta": "Freddy Mercury",
+		"opciones": ["Freddy Crugger", "Freddy Mercury", "Freddy Vega", "Freddy Venus"],
+		"categoria": "Entretenimiento",
+		"nivel": "Facil",
+		"imagen": "11.jpg"
+	},
+	{
+		"id": 12,
+		"pregunta": "¿A qué grupo musical pertenece la canción 'Smells like teen spirit'?",
+		"respuesta": "Nirvana",
+		"opciones": ["Nirvana", "Metallica", "Gun's and roses", "Beatles"],
+		"categoria": "Entretenimiento",
+		"nivel": "Normal",
+		"imagen": "12.jpg"
+	},
+	{
+		"id": 13,
+		"pregunta": "¿Quién es el antagonista de la película 'El Rey León'?",
+		"respuesta": "Scar",
+		"opciones": ["Timon", "Pumba", "Tinkerbell", "Scar"],
+		"categoria": "Entretenimiento",
+		"nivel": "Dificil",
+		"imagen": "13.jpg"
+	},
+	{
+		"id": 14,
+		"pregunta": "¿Qué película hizo famoso al director James Cameron?",
+		"respuesta": "Titanic",
+		"opciones": ["Titanic", "Avatar", "Terminator", "Rambo"],
+		"categoria": "Entretenimiento",
+		"nivel": "Dios",
+		"imagen": "14.jpg"
+	},
+	{
+		"id": 15,
+		"pregunta": "¿En qué festival hay desfiles cuyos directores son escuelas de samba?",
+		"respuesta": "El Carnaval de Brasil",
+		"opciones": ["El Carnaval de las flores", "El Festival de la samba", "El Festival du Soleil", "El Carnaval de Brasil"],
+		"categoria": "Entretenimiento",
+		"nivel": "Titán",
+		"imagen": "15.jpg"
+	},
+	{
+		"id": 16,
+		"pregunta": "¿Quién es el pintor que creo la Mona Lisa?",
+		"respuesta": "",
+		"opciones": ["Leonardo Di Caprio", "Ruben Aguirre", "Leopoldo Bonaparte", "Leonardo da Vinci"],
+		"categoria": "Arte y literatura",
+		"nivel": "Facil",
+		"imagen": "13.jpg"
+	},
+	{
+		"id": 17,
+		"pregunta": "¿Quién es el autor de la Ilíada y la Odisea?",
+		"respuesta": "Homero",
+		"opciones": ["Homero", "Odiseo", "Mou", "Zeus"],
+		"categoria": "Arte y literatura",
+		"nivel": "Normal",
+		"imagen": "13.jpg"
+	},
+	{
+		"id": 18,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Arte y literatura",
+		"nivel": "Dificil",
+		"imagen": "18.jpg"
+	},
+	{
+		"id": 19,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Arte y literatura",
+		"nivel": "Dios",
+		"imagen": "19.jpg"
+	},
+	{
+		"id": 20,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Arte y literatura",
+		"nivel": "Titán",
+		"imagen": "20.jpg"
+	},
+	{
+		"id": 21,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Deportes",
+		"nivel": "Facil",
+		"imagen": "21.jpg"
+	},
+	{
+		"id": 22,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Deportes",
+		"nivel": "Normal",
+		"imagen": "22.jpg"
+	},
+	{
+		"id": 23,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Deportes",
+		"nivel": "Dificil",
+		"imagen": "23.jpg"
+	},
+	{
+		"id": 24,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Deportes",
+		"nivel": "Dios",
+		"imagen": "24.jpg"
+	},
+	{
+		"id": 25,
+		"pregunta": "",
+		"respuesta": "",
+		"opciones": [],
+		"categoria": "Deportes",
+		"nivel": "Titán",
+		"imagen": "25.jpg"
+	},
 ]
