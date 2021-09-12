@@ -12,9 +12,12 @@ export class ConcursoComponent implements OnInit {
 	categoria: string = "";
 	opciones:string[] = [];
 	juego:boolean = true;
-	corr: string = ""
+	corr: string = "";
+	nivel: string = "";
 	dificultad: string[] = ["Facil", "Normal", "Dificil", "Dios", "Titán"];
 	preguntas: any;
+	correctas: number = 0;
+	erroneas: number = 0;
 	cont: number = 0;;
 
 	constructor() {
@@ -22,7 +25,7 @@ export class ConcursoComponent implements OnInit {
 
 	empezarJuego(){
 		this.juego = false;
-		let preg = Math.trunc(Math.random() * 3);
+		let preg = Math.trunc(Math.random() * 5);
 		this.filtro(this.dificultad[this.cont]);
 		this.preguntaRandom(this.filtradas[preg]);
 	}
@@ -33,6 +36,7 @@ export class ConcursoComponent implements OnInit {
 		this.imagen = item.imagen;
 		this.opciones = item.opciones;
 		this.categoria = item.categoria;
+		this.nivel = item.nivel;
 	}
 
 	filtradas: any[] = []
@@ -46,15 +50,15 @@ export class ConcursoComponent implements OnInit {
 	siguiente(index){
 		this.cont++;
 		if(this.corr === index){
-			console.log("Buena respuesta");
+			this.correctas++
 		} else {
-			console.log("Mala Respuesta");
+			this.erroneas++
 		}
-		if(this.cont == 4) {
+		if(this.cont == 5) {
 			this.cont = 0;
 			this.juego = true;
 		}
-		let preg = Math.trunc(Math.random() * 3);
+		let preg = Math.trunc(Math.random() * 5);
 		this.filtro(this.dificultad[this.cont]);
 		this.preguntaRandom(this.filtradas[preg]);
 	}

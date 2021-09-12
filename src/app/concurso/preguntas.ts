@@ -87,7 +87,7 @@ export const PREGUNTAS = [
       "opciones": ["Mediante un empaste", "Sacando el diente", "Con crema de dientes", "Pidiendole a DIos"],
       "categoria": "Naturaleza y ciencias",
 	  "nivel": "Titán",
-      "imagen": "10.jpg",
+      "imagen": "10.png",
     },
 	{
 		"id": 11,
@@ -141,7 +141,7 @@ export const PREGUNTAS = [
 		"opciones": ["Leonardo Di Caprio", "Ruben Aguirre", "Leopoldo Bonaparte", "Leonardo da Vinci"],
 		"categoria": "Arte y literatura",
 		"nivel": "Facil",
-		"imagen": "13.jpg"
+		"imagen": "16.jpg"
 	},
 	{
 		"id": 17,
@@ -150,76 +150,76 @@ export const PREGUNTAS = [
 		"opciones": ["Homero", "Odiseo", "Mou", "Zeus"],
 		"categoria": "Arte y literatura",
 		"nivel": "Normal",
-		"imagen": "13.jpg"
+		"imagen": "17.jpg"
 	},
 	{
 		"id": 18,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "Notre Dame es una catedral con un estilo arquitectónico muy definido. ¿Cuál?",
+		"respuesta": "Estilo gótico",
+		"opciones": ["Estilo moderno", "Estilo contemporaneo", "Estilo gótico", "Estilo darks"],
 		"categoria": "Arte y literatura",
 		"nivel": "Dificil",
 		"imagen": "18.jpg"
 	},
 	{
 		"id": 19,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "'Ser o no ser, esa es la cuestión' es un soliloquio que pertenece a una obra de Shakespeare. ¿Cómo se llama?",
+		"respuesta": "Hamlet",
+		"opciones": ["Existencial", "Hamlet", "Descubriendo mi yo", "Ontologia mediatica"],
 		"categoria": "Arte y literatura",
 		"nivel": "Dios",
 		"imagen": "19.jpg"
 	},
 	{
 		"id": 20,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "¿Cómo se titula el clásico de ciencia ficción dirigido por Fritz Lang?",
+		"respuesta": "Metrópolis",
+		"opciones": ["Metrópolis", "EL futuro es aqui", "La era de los simios", "La era de Ultron"],
 		"categoria": "Arte y literatura",
 		"nivel": "Titán",
 		"imagen": "20.jpg"
 	},
 	{
 		"id": 21,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "¿Qué colores componen los anillos olímpicos?",
+		"respuesta": "Negro, rojo, azul, amarillo y verde",
+		"opciones": ["Negro, rosado, azul, amarillo y verde", "Negro, rojo, blanco, amarillo y verde", "Negro, rojo, azul, violeta y verde", "Negro, rojo, azul, amarillo y verde"],
 		"categoria": "Deportes",
 		"nivel": "Facil",
-		"imagen": "21.jpg"
+		"imagen": "21.png"
 	},
 	{
 		"id": 22,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "Un atleta posee los récords mundiales de velocidad de 100 y 200 metros lisos. ¿Quién es?",
+		"respuesta": "Usain Bolt",
+		"opciones": ["Forest Gump", "Usain Bolt", "Leonardo Messi", "Cristiano Ronaldo"],
 		"categoria": "Deportes",
 		"nivel": "Normal",
 		"imagen": "22.jpg"
 	},
 	{
 		"id": 23,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "¿Qué baile tiene su origen en un arte marcial?",
+		"respuesta": "La capoeira",
+		"opciones": ["La capoeira", "La zamba", "La salsa", "El judo"],
 		"categoria": "Deportes",
 		"nivel": "Dificil",
 		"imagen": "23.jpg"
 	},
 	{
 		"id": 24,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "¿Cuál es el deporte más popular en la India?",
+		"respuesta": "El críquet",
+		"opciones": ["EL baseball", "El basketball", "El críquet", "El voleiball"],
 		"categoria": "Deportes",
 		"nivel": "Dios",
 		"imagen": "24.jpg"
 	},
 	{
 		"id": 25,
-		"pregunta": "",
-		"respuesta": "",
-		"opciones": [],
+		"pregunta": "¿En qué equipo de la NBA estuvo Manu Ginobili entre 2002 y 2018?",
+		"respuesta": "San Antonio Spurs",
+		"opciones": ["San Antonio Spurs", "Miami", "Luxengburb", "The bulls"],
 		"categoria": "Deportes",
 		"nivel": "Titán",
 		"imagen": "25.jpg"
