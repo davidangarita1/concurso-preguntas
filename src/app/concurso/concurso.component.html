@@ -1,11 +1,11 @@
-<div *ngIf="logueado == false" class="login">
+<div *ngIf="logueado == false" class="login word">
 	<app-usuario></app-usuario>
 </div>
 <div *ngIf="logueado" class="menu">
 	<app-menu></app-menu>
 </div>
 <div class="container" *ngIf="terminado == false && logueado">
-	<h1 class="text-center" *ngIf="juego">Concurso de Preguntas Sofka</h1>
+	<h1 class="text-center word" *ngIf="juego">Concurso de Preguntas Sofka</h1>
 	<div class="row" *ngIf="pregObj.categoria.length && juego == false">
 		<div class="col-6 p-2">
 			<h3><span class="badge bg-dark">Categoria: {{pregObj.categoria}}</span></h3>
@@ -14,7 +14,7 @@
 			<h3><span class="badge bg-dark">Nivel: {{pregObj.nivel}}</span></h3>
 		</div>
 	</div>
-	<div class="row mt-3 text-center" *ngIf="pregObj.pregunta && juego == false">
+	<div class="row mt-3 text-center word" *ngIf="pregObj.pregunta && juego == false">
 		<h3>{{pregObj.pregunta}}</h3>
 	</div>
 	<div class="row" *ngIf="juego">
@@ -29,7 +29,7 @@
 	</div>
 	<div class="row text-center mt-3" *ngIf="pregObj.opciones.length && juego == false">
 		<div *ngFor="let opcion of pregObj.opciones; index as i" class="col-6">
-			<button type="button" class="btn btn-info" (click)="siguiente(i)">{{opcion}}</button>
+			<button type="button" class="btn btn-info word" (click)="siguiente(i)">{{opcion}}</button>
 		</div>
 	</div>
 	<div class="row text-center">
