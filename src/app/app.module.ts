@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcursoComponent } from './concurso/concurso.component';
 import { MenuComponent } from './menu/menu.component';
-import { AuthGuard } from './shared/guards/auth.guard';
 import { FooterComponent } from './footer/footer.component';
 
 
@@ -24,7 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 		AppRoutingModule,
 		FormsModule
 	],
-	providers: [AuthGuard],
+	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

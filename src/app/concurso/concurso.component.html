@@ -1,5 +1,10 @@
-<app-menu></app-menu>
-<div class="container" *ngIf="terminado == false">
+<div *ngIf="logueado == false" class="login">
+	<app-usuario></app-usuario>
+</div>
+<div *ngIf="logueado" class="menu">
+	<app-menu></app-menu>
+</div>
+<div class="container" *ngIf="terminado == false && logueado">
 	<h1 class="text-center" *ngIf="juego">Concurso de Preguntas Sofka</h1>
 	<div class="row" *ngIf="pregObj.categoria.length && juego == false">
 		<div class="col-6 p-2">
@@ -34,15 +39,19 @@
 
 	</div>
 </div>
-<div class="container">
+<div *ngIf="logueado" class="container">
 	<div class="row text-left" *ngIf="terminado">
 		<div class="col text-center points">
 			<h1 class="mb-3">Felicitaciones</h1>
 			<h3>Has terminado el concurso</h3>
 			<h3>El total ganado es:</h3>
 			<h3><img src="../../assets/images/diamond.png" class="img-fluid" alt=""> +{{gemas}}</h3>
+			<h2>Historial</h2>
+			<h3><span class="badge bg-success">Correctas: {{historico.correctas}}</span></h3>
+			<h3><span class="badge bg-danger">Erroneas: {{historico.erroneas}}</span></h3>
 			<button type="button" class="btn btn-info" (click)="reiniciar()">Reiniciar</button>
 		</div>
 	</div>
+	<app-footer></app-footer>
 </div>
-<app-footer></app-footer>
+

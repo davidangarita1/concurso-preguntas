@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+
 import { Component, OnInit } from '@angular/core';
 import { PREGUNTAS } from './preguntas';
 import { DataService } from '../services/data.service';
@@ -11,6 +11,7 @@ import { pregunta } from '../models/pregunta';
 	styleUrls: ['./concurso.component.scss']
 })
 export class ConcursoComponent implements OnInit {
+	logueado: boolean = false;
 	usuario: usuario = null;
 	pregObj: pregunta = {
 		id: 0,
@@ -31,6 +32,7 @@ export class ConcursoComponent implements OnInit {
 	dificultad: string[] = ["Facil", "Normal", "Dificil", "Dios", "Titán"];
 	preguntas: any;
 	cont: number = 0;
+	historico: usuario = null;
 
 	constructor(
 		private dataService:DataService
@@ -68,6 +70,7 @@ export class ConcursoComponent implements OnInit {
 		this.terminado = false;
 		this.cont = 0;
 		this.gemas = 0;
+		window.location.reload();
 	}
 
 	siguiente(index){
@@ -84,6 +87,9 @@ export class ConcursoComponent implements OnInit {
 			this.cont = 0;
 			this.juego = true;
 			this.terminado = true;
+			this.historico = this.dataService.getData();
+			console.log(this.historico);
+
 		}
 		let preg = Math.trunc(Math.random() * 5);
 		this.filtro(this.dificultad[this.cont]);
@@ -91,6 +97,11 @@ export class ConcursoComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		if (this.dataService.getData() !== null) {
+			this.logueado = true;
+		} else {
+			this.logueado = false;
+		}
 	}
 
 }

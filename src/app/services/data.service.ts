@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DataService {
 
-	constructor(
-		private router: Router,
-	) { }
+	constructor() { }
 
 	private data;
 
 	setData(data) {
-		localStorage.setItem('concursante',JSON.stringify(data));
+		localStorage.setItem('concursante', JSON.stringify(data));
 	}
 
 	addValue(param) {

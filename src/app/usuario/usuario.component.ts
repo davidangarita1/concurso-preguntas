@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class UsuarioComponent implements OnInit {
 	nickname: string;
+	logueado: boolean = false;
 
 	constructor(
 		private dataService: DataService,
@@ -15,9 +16,6 @@ export class UsuarioComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		if (localStorage.getItem('concursante')) {
-			this.router.navigate(['/concurso']);
-		}
 	}
 
 	onSave() {
@@ -27,6 +25,7 @@ export class UsuarioComponent implements OnInit {
 			erroneas: 0,
 			puntos: 0
 		}
-		localStorage.setItem('concursante',JSON.stringify(newData));
+		this.dataService.setData(newData);
+		window.location.reload();
 	}
 }
