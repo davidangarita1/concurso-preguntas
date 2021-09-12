@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PREGUNTAS } from './preguntas';
+import { DataService } from '../services/data.service';
+import { usuario } from '../models/usuario';
 
 @Component({
 	selector: 'app-concurso',
@@ -7,6 +10,7 @@ import { PREGUNTAS } from './preguntas';
 	styleUrls: ['./concurso.component.scss']
 })
 export class ConcursoComponent implements OnInit {
+	usuario: usuario = null;
 	pregunta: string = "";
 	imagen: string = "";
 	categoria: string = "";
@@ -16,11 +20,11 @@ export class ConcursoComponent implements OnInit {
 	nivel: string = "";
 	dificultad: string[] = ["Facil", "Normal", "Dificil", "Dios", "Titán"];
 	preguntas: any;
-	correctas: number = 0;
-	erroneas: number = 0;
-	cont: number = 0;;
+	cont: number = 0;
 
-	constructor() {
+	constructor(
+		private dataService:DataService
+	) {
 	}
 
 	empezarJuego(){
@@ -47,12 +51,21 @@ export class ConcursoComponent implements OnInit {
 		});
 	}
 
+	clean(){
+		this.imagen = "";
+		this.pregunta = "";
+		this.opciones = [];
+		this.categoria = "";
+	}
+
 	siguiente(index){
 		this.cont++;
+		this.clean();
 		if(this.corr === index){
-			this.correctas++
+			this.dataService.addValue("correctas");
+			this.dataService.addValue("puntos");
 		} else {
-			this.erroneas++
+			this.dataService.addValue("erroneas");
 		}
 		if(this.cont == 5) {
 			this.cont = 0;
