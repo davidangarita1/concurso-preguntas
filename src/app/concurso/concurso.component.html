@@ -14,6 +14,9 @@
 			<h3><span class="badge bg-dark">Nivel: {{pregObj.nivel}}</span></h3>
 		</div>
 	</div>
+	<div *ngIf="juego == false" class="progress">
+		<div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{width: porcentaje + '%'}" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	</div>
 	<div class="row mt-3 text-center word" *ngIf="pregObj.pregunta && juego == false">
 		<h3>{{pregObj.pregunta}}</h3>
 	</div>
@@ -21,7 +24,9 @@
 		<div class="col-md-6 offset-md-3">
 			<p class="">
 				Bienvenido a concurso de preguntas Sofka por David Angarita.
-				A continuación pondrás a prueba tus conocimientos en las categorías: Arte, Ciencia , Deportes, Historia y Entretenimiento en las cuales a medida que avanza el juego el nivel de dificultad subirá. Por cada pregunta que ganes obtendrás un diamante y los podrás acumular en todas las partidas.
+				A continuación pondrás a prueba tus conocimientos en las categorías: Arte, Ciencia , Deportes, Historia
+				y Entretenimiento en las cuales a medida que avanza el juego el nivel de dificultad subirá, tendras 1 minuto para responder las 5 preguntas. Por cada
+				pregunta que ganes obtendrás un diamante y los podrás acumular en todas las partidas.
 			</p>
 		</div>
 	</div>
@@ -37,15 +42,16 @@
 	</div>
 	<div class="row text-center">
 		<div class="col-12">
-			<button type="button" class="btn btn-success empezar" *ngIf="juego" (click)="empezarJuego()">Empezar</button>
+			<button type="button" class="btn btn-success empezar" *ngIf="juego"
+				(click)="empezarJuego()">Empezar</button>
 		</div>
-
 	</div>
 </div>
 <div *ngIf="logueado" class="container">
 	<div class="row text-left" *ngIf="terminado">
 		<div class="col text-center points">
-			<h1 class="mb-3">Felicitaciones</h1>
+			<h1 class="mb-3" *ngIf="perdida == false">Felicitaciones</h1>
+			<h1 class="mb-3" *ngIf="perdida">Que mal! 😟</h1>
 			<h3>Has terminado el concurso</h3>
 			<h3>El total ganado es:</h3>
 			<h3><img src="../../assets/images/diamond.png" class="img-fluid" alt=""> +{{gemas}}</h3>
@@ -57,4 +63,3 @@
 	</div>
 	<app-footer></app-footer>
 </div>
-
